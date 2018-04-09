@@ -1,0 +1,10 @@
+var doc = document;
+var player = doc.querySelector('object');
+var tryTime = 10;
+while (tryTime-- && (!player || player && !player.playMovie)){
+doc = doc.querySelector('iframe').contentDocument
+player = doc.querySelector('object');
+}
+setInterval(function () {
+player.playMovie();
+}, 1000);

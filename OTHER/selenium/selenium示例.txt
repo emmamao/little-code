@@ -1,0 +1,20 @@
+from selenium import webdriver
+from lxml import etree
+
+#调用chrome端
+broswer_loc='C:\\Users\\xxx\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe'
+driver_loc='chromedriver.exe'
+webdriver.ChromeOptions.binary_location=broswer_loc
+broswer=webdriver.Chrome(driver_loc)
+url = ""
+broswer.get(url)
+broswer.find_element_by_xpath('//input[@type="text"]').send_keys('') # 改成你的微博账号
+broswer.find_element_by_xpath('//input[@type="password"]').send_keys('') # 改成你的微博密码
+broswer.find_element_by_xpath('//input[@type="submit"]').click() # 点击登录
+
+# 获得 cookie信息
+cookie_list = broswer.get_cookies()
+print(cookie_list)
+#page_html=broswer.execute_script("return document.documentElement.outerHTML")
+print(broswer.page_source)
+broswer.quit()

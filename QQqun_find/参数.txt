@@ -1,0 +1,5 @@
+使用说明：QQ自动登录暂未实现，请在浏览器里www.qq.com已登录的情况下，访问 http://find.qq.com，任意查询某关键字，F12--Network--F5,点击pc_group_search的请求，复制requests header里的cookies；复制Form data里的bkn!
+请输入复制的bkn：xx
+请输入复制的cookies：xxxx
+查询个数：100
+查询关键字：班级
